@@ -1,7 +1,5 @@
 # doodleJump_like
 
-## BEN SOUSSAN Nathan p2300345
-
 ###### L'objectif général de l'application est de créer un jeux du type "doodleJump". Dans l'application nous jouons un joueur qui peut se déplacer à l'aide des flèche du clavier, notre joueur subis divers force dans le monde qu'il parcourt. 
 
 # Commande de jeu :
@@ -32,6 +30,4 @@ Ne pas hésité à modifier les constante dt (influe sur la vitesse de rebond du
 * Deuxième semaine : Mise en place des troues noirs, mise en place des projectiles qui tue les monstres, corrections des mouvements de toutes les plateformes (Au début les platformes cassées qui tombait après etre sauter dessus ne se générait par correctement). D'ici la semaine prochaine, je veux rajouter des sortes de trampoline sur lequel on peut sauter et ensuite propulser (+ d'autres idées à venir).
 * 3ème semaine : -> Mise en place de nouvelle plateforme "jump" (verte), lorsque le joueur saute dessus, il rebondit plus haut que sur les autres plateformes. -> Modification des projectile, qui était une jet de particules, maintenant ce sont des triangle en rotation (1 projectile par projectile). -> Mise en place des bouclier qui lorsque le joueur le touche est protégé des monstre. -> Gestion de la vitesse au fonction de la position du joueur dans la fenetre (voir explication code)
 
-# Références : 
 
-* Wikipedia, github 
