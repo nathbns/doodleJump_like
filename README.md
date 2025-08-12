@@ -1,36 +1,92 @@
-# doodleJump_like
+# 🎮 Doodle Jump Like
 
-###### The goal of this application is to create a game in the spirit of **Doodle Jump**. You control a character that moves with the arrow keys and is subjected to various forces as it climbs.
+A C++ game inspired by **Doodle Jump** built with SDL2. Control a character that bounces upward through an endless world filled with platforms, monsters, and power-ups!
 
-## Game controls
-From the **PRESS START** screen, press **S** or **right‑click** to start a run. Move with the **left / right arrow keys** and kill monsters with a **short or long left‑click**.
+## 📸 Game Preview
 
-You can tweak the constants **`dt`** (affects the player’s rebound speed) and **`vitesseJeu`** (global speed factor for every object). The default values are already well balanced.
+<div align="center">
+  <img src="public/dd_img1.png" alt="Gameplay Screenshot 1" width="400"/>
+  <img src="public/dd_img2.png" alt="Gameplay Screenshot 2" width="400"/>
+</div>
 
-## Game rules
-* Touch the bottom of the window → **GAME OVER**
-* Touch a monster → **GAME OVER**
-* Score:  
-  * Land on a standard lateral‑moving platform … **+5**  
-  * Break a “broken” platform … **+10**  
-  * Kill a monster … **+20**
-* Shields temporarily protect the player from monsters.
+## 🎯 Game Objective
 
-## High‑level code overview
-* The player is a single particle with standard forces, rendered with a sprite.
-* Platforms are randomly spawned and may be:  
-  * **classic**  
-  * **broken** — falls when the player lands on it  
-  * **moving** — slides left‑right  
-  * **jump** — gives an extra‑high bounce  
-  A platform can be both **moving** and **broken**.
-* **Endless world**: when a platform leaves the bottom of the window, it is immediately repositioned at the top.
-* **Up‑scroll illusion**: all platforms drift slowly downward; when the player lands, every platform shifts downward in a single step.
-* The player bounces only when arriving from above; collisions from below are ignored for smoother gameplay.
-* **Black holes**: apply an attractive force when the player enters their radius; forces are reset when the player exits.
-* **Projectiles**: defined by a `Projectile` struct; rotating triangles whose colour interpolates over their lifetime; disappear when timed out or on monster impact.
-* **Shield**: drops from the top; when collected, a ring appears around the player and grants temporary invulnerability.
-* **Dynamic speed**:  
-  * Player height between **1/3 and 3/4** of the window → speed × 1.5  
-  * Above **3/4** → speed × 1.7  
-  * Below **1/3** → default speed
+Control your character as it climbs through an endless vertical world. Avoid monsters, collect shields, and aim for the highest score possible by bouncing on platforms and defeating enemies.
+
+## 🕹️ Controls
+
+| Action | Input |
+|--------|-------|
+| **Start Game** | Press `S` or **Right-click** from the main menu |
+| **Move Left/Right** | **Arrow keys** (← →) |
+| **Shoot** | **Left-click** (short or long press) |
+
+### Configuration
+You can adjust these constants for different gameplay experiences:
+- **`dt`** - Controls player rebound speed
+- **`vitesseJeu`** - Global speed multiplier for all objects
+
+*Default values are already well-balanced for optimal gameplay.*
+
+## 📋 Game Rules
+
+### 💀 Game Over Conditions
+- Touch the bottom of the screen
+- Collide with a monster (unless protected by shield)
+
+### 🏆 Scoring System
+| Action | Points |
+|--------|--------|
+| Land on standard platform | **+5** |
+| Break a "broken" platform | **+10** |
+| Kill a monster | **+20** |
+
+### 🛡️ Power-ups
+- **Shields**: Provide temporary invulnerability against monsters
+
+## 🏗️ Technical Overview
+
+### Core Mechanics
+- **Physics-based player**: Single particle with realistic forces and sprite rendering
+- **Endless world**: Platforms recycle from bottom to top seamlessly
+- **Smart collision**: Player bounces only when landing from above
+- **Dynamic difficulty**: Speed increases based on player height
+
+### Platform Types
+- **🟢 Classic**: Standard bouncing platforms
+- **🔴 Broken**: Falls when player lands (higher points)
+- **🔵 Moving**: Slides horizontally left-right
+- **🟡 Jump**: Provides extra-high bounce
+- *Note: Platforms can combine properties (e.g., moving + broken)*
+
+### Special Elements
+- **🕳️ Black Holes**: Apply gravitational pull within their radius
+- **🔺 Projectiles**: Rotating triangles with color interpolation and timed lifecycle
+- **🛡️ Shield Drops**: Collectible protection that creates a defensive ring around player
+
+### Performance Features
+- **Adaptive Speed System**:
+  - Height 1/3 - 3/4 of screen: **1.5x speed**
+  - Above 3/4: **1.7x speed**  
+  - Below 1/3: **Default speed**
+- **Optimized Rendering**: Efficient sprite management and smooth animations
+
+## 🛠️ Building & Running
+
+Make sure you have SDL2 installed, then:
+
+```bash
+make
+./doodle_jump
+```
+
+## 📁 Project Structure
+
+```
+doodleJump_like/
+├── data/           # Game assets (sprites, fonts, sounds)
+├── engine/         # SDL wrapper and core engine
+├── game/           # Game logic, rendering, and types
+├── public/         # Screenshots and preview images
+└── main_DOODLE.cpp # Entry point
+```
