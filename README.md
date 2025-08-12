@@ -1,19 +1,19 @@
-# 🎮 Doodle Jump Like
+# Doodle Jump Like
 
 A C++ game inspired by **Doodle Jump** built with SDL2. Control a character that bounces upward through an endless world filled with platforms, monsters, and power-ups!
 
-## 📸 Game Preview
+## Game Preview
 
 <div align="center">
   <img src="public/dd_img1.png" alt="Gameplay Screenshot 1" width="400"/>
   <img src="public/dd_img2.png" alt="Gameplay Screenshot 2" width="400"/>
 </div>
 
-## 🎯 Game Objective
+## Game Objective
 
 Control your character as it climbs through an endless vertical world. Avoid monsters, collect shields, and aim for the highest score possible by bouncing on platforms and defeating enemies.
 
-## 🕹️ Controls
+## Controls
 
 | Action | Input |
 |--------|-------|
@@ -28,23 +28,23 @@ You can adjust these constants for different gameplay experiences:
 
 *Default values are already well-balanced for optimal gameplay.*
 
-## 📋 Game Rules
+## Game Rules
 
-### 💀 Game Over Conditions
+### Game Over Conditions
 - Touch the bottom of the screen
 - Collide with a monster (unless protected by shield)
 
-### 🏆 Scoring System
+### Scoring System
 | Action | Points |
 |--------|--------|
 | Land on standard platform | **+5** |
 | Break a "broken" platform | **+10** |
 | Kill a monster | **+20** |
 
-### 🛡️ Power-ups
+### Power-ups
 - **Shields**: Provide temporary invulnerability against monsters
 
-## 🏗️ Technical Overview
+## Technical Overview
 
 ### Core Mechanics
 - **Physics-based player**: Single particle with realistic forces and sprite rendering
@@ -60,9 +60,9 @@ You can adjust these constants for different gameplay experiences:
 - *Note: Platforms can combine properties (e.g., moving + broken)*
 
 ### Special Elements
-- **🕳️ Black Holes**: Apply gravitational pull within their radius
-- **🔺 Projectiles**: Rotating triangles with color interpolation and timed lifecycle
-- **🛡️ Shield Drops**: Collectible protection that creates a defensive ring around player
+- ** Black Holes**: Apply gravitational pull within their radius
+- ** Projectiles**: Rotating triangles with color interpolation and timed lifecycle
+- ** Shield Drops**: Collectible protection that creates a defensive ring around player
 
 ### Performance Features
 - **Adaptive Speed System**:
@@ -71,7 +71,7 @@ You can adjust these constants for different gameplay experiences:
   - Below 1/3: **Default speed**
 - **Optimized Rendering**: Efficient sprite management and smooth animations
 
-## 🛠️ Building & Running
+##  Building & Running
 
 Make sure you have SDL2 installed, then:
 
